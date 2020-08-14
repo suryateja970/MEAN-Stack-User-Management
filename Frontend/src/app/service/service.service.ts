@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
+import {Router} from '@angular/router'
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private router:Router) { }
 
   BaseUrl="http://localhost:3000"
   isAuthenticated()
@@ -28,6 +29,7 @@ login(loginForm)
 logout()
 {
   localStorage.clear();
+  this.router.navigate(['/login'])
 
 }
 
