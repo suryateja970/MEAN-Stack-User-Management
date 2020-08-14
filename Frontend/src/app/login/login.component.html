@@ -1,0 +1,177 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1> Online Reservation Portal</h1>
+        </div>
+    </div>
+    <mat-card class="card" id="card">
+        <div class="buttonbox">
+            <div id="but"></div>
+            <button class="toggle-button" (click)="login()">LOGIN</button>
+            <button class="toggle-button" (click)="register()">REGISTER</button>
+        </div>
+        <div class="forms">
+            <form [formGroup]="loginForm" *ngIf="form1" class="form1" (ngSubmit)="loginsubmit()">
+                <div class="form-group">
+                    <label for="emailid">Email Id</label>
+                    <input class="form-control" formControlName="emailid" class="form-control" id="emailid" type="text">
+                    <div *ngIf="loginForm.controls['emailid'].invalid && (loginForm.controls['emailid'].dirty || loginForm.controls['emailid'].touched)" class="alert">
+                        <div *ngIf="loginForm.controls['emailid'].errors.required">
+                            <small>
+                            Email is required.
+                            </small>
+                        </div>
+                        <div *ngIf="loginForm.controls['emailid'].errors.email">
+                            <small>
+                             Invalid Email Format.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input class="form-control" formControlName="password" class="form-control" id="password" type="password">
+                    <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="alert ">
+                        <div *ngIf="loginForm.controls['password'].errors.required">
+                            <small>
+                                Password is required.
+                            </small>
+                        </div>
+                        <div *ngIf="loginForm.controls['password'].errors.pattern">
+                            <small>
+                                Password must be 6 to 10 charcters.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="sub-but">Login</button>
+                    </div>
+                </div>
+            </form>
+
+
+
+
+
+            <form [formGroup]="regForm" *ngIf="form2" class="form2" (ngSubmit)="regsubmit()">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input formControlName="name" class="form-control" placeholder="Full Name" type="text">
+                            <div *ngIf="regForm.controls['name'].invalid && (regForm.controls['name'].dirty || regForm.controls['name'].touched)" class="alert ">
+                                <div *ngIf="regForm.controls['name'].errors.required">
+                                    <small>
+                                Name is required.
+                            </small>
+                                </div>
+                                <div *ngIf="regForm.controls['name'].errors.pattern">
+                                    <small>
+                                Name should contain only alphabets.
+                            </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="form-group">
+                            <label for="emailid">Email Id</label>
+                            <input class="form-control" formControlName="emailid" class="form-control" id="emailid" type="text">
+                            <div *ngIf="regForm.controls['emailid'].invalid && (regForm.controls['emailid'].dirty || regForm.controls['emailid'].touched)" class="alert">
+                                <div *ngIf="regForm.controls['emailid'].errors.required">
+                                    <small>
+                                        Email is required.
+                                        </small>
+                                </div>
+                                <div *ngIf="regForm.controls['emailid'].errors.email">
+                                    <small>
+                                         Invalid Email Format.
+                                        </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input formControlName="password" class="form-control" type="password">
+                            <div *ngIf="regForm.controls['password'].invalid && (regForm.controls['password'].dirty || regForm.controls['password'].touched)" class="alert ">
+                                <div *ngIf="regForm.controls['password'].errors.required">
+                                    <small>
+                            Password is required.
+                        </small>
+                                </div>
+                                <div *ngIf="regForm.controls['password'].errors.pattern">
+                                    <small>
+                            Password must be min 6 and max 10 length.
+                        </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="form-group">
+                            <label for="phoneno">Phone No</label>
+                            <input formControlName="phoneno" class="form-control" placeholder="Phone No" type="text">
+                            <div *ngIf="regForm.controls['phoneno'].invalid && (regForm.controls['phoneno'].dirty || regForm.controls['phoneno'].touched)" class="alert ">
+                                <div *ngIf="regForm.controls['phoneno'].errors.required">
+                                    <small>
+                                    Phone No is required.
+                                 </small>
+                                </div>
+                                <div *ngIf="regForm.controls['phoneno'].errors.pattern">
+                                    <small>
+                                 Phone No must be 10 digits.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea formControlName="address" class="form-control" placeholder="Address" type="text" size="30"></textarea>
+                            <div *ngIf="regForm.controls['address'].invalid && (regForm.controls['address'].dirty || regForm.controls['address'].touched)" class="alert ">
+                                <div *ngIf="regForm.controls['address'].errors.required">
+                                    <small>
+                                    Address is required.
+                                </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="form-group">
+                            <label for="pincode">Pincode</label>
+                            <input formControlName="pincode" class="form-control" placeholder="Pincode" type="text">
+                            <div *ngIf="regForm.controls['pincode'].invalid && (regForm.controls['pincode'].dirty || regForm.controls['pincode'].touched)" class="alert ">
+                                <div *ngIf="regForm.controls['pincode'].errors.required">
+                                    <small>
+                                    Pincode is required.
+                                </small>
+                                </div>
+                                <div *ngIf="regForm.controls['pincode'].errors.pattern">
+                                    <small>
+                                    Pincode must be 6 digits.
+                                </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="sub-but">Register</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </mat-card>
+</div>

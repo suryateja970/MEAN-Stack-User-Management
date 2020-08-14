@@ -1,0 +1,123 @@
+.container {
+    display: grid;
+    overflow: hidden;
+    margin: 0px auto;
+    text-align: center;
+}
+
+h1 {
+    margin: 0px auto;
+    padding: 25px;
+    color: wheat;
+    position: relative;
+}
+
+.box {
+    width: 550px;
+    height: 450px;
+    margin: 0px auto;
+    background-color: white;
+    position: relative;
+    padding-top: 50px;
+    border-radius: 10px;
+}
+
+.buttonbox {
+    width: 220px;
+    height: 50px;
+    margin: 0px auto;
+    position: relative;
+    border-radius: 25px;
+    box-shadow: 0 0 26px 9px #ED8F03;
+}
+
+.toggle-button {
+    width: 100px;
+    position: relative;
+    padding-top: 12px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#but {
+    display: block;
+    width: 120px;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to right, #f12711, #f5af19);
+    border-radius: 25px;
+    margin: 0px;
+}
+
+.forms {
+    position: relative;
+    margin: 30px;
+}
+
+.sub-but {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    background: linear-gradient(to right, #f12711, #f5af19);
+    border-radius: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 25px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.alert {
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+.form-control.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
+
+.form-control.ng-touched.ng-valid {
+    border: 1px solid green;
+}
+
+small {
+    color: red;
+}
+
+@media (max-width:450px) {
+    .container {
+        display: grid;
+        margin: 0px auto;
+        text-align: center;
+    }
+    .card {
+        margin-bottom: 10px;
+        padding-top: 25px;
+    }
+}
+
+@media (min-width:750px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        text-align: center;
+        align-self: center;
+        align-items: center;
+    }
+    .card {
+        padding-top: 25px;
+        margin-bottom: 10px;
+        width: 540px;
+        height: 570px;
+    }
+}
